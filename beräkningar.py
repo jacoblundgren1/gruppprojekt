@@ -33,7 +33,7 @@ def run_simulation(
     temperatures = []
     energy = 0
 
-    for _ in range(hours):
+    for _ in range(timmar):
         temperatures.append(T)
 
         u = thermostat(T, T_onskad)
