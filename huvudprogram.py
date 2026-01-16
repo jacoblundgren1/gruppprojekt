@@ -4,7 +4,7 @@ from beräkningar import run_simulation
 # Gemensamma värden
 T_start = 17
 T_ute = -5
-hours = 48
+timmar = 48
 
 # =========================
 # EXPERIMENT 1 – Referensfall
@@ -12,10 +12,10 @@ hours = 48
 temps1, energy1 = run_simulation(
     T_start=T_start,
     T_ute=T_ute,
-    T_desired=21,
+    T_onskad=21,
     k_forlust=0.05,
     P=1.4,
-    hours=hours
+    timmar=timmar
 )
 
 # =========================
@@ -24,10 +24,10 @@ temps1, energy1 = run_simulation(
 temps2, energy2 = run_simulation(
     T_start=T_start,
     T_ute=T_ute,
-    T_desired=21,
+    T_onskad=21,
     k_forlust=0.02,
     P=1.4,
-    hours=hours
+    timmar=timmar
 )
 
 # =========================
@@ -36,10 +36,10 @@ temps2, energy2 = run_simulation(
 temps3, energy3 = run_simulation(
     T_start=T_start,
     T_ute=T_ute,
-    T_desired=21,
+    T_onskad=21,
     k_forlust=0.10,
     P=1.4,
-    hours=hours
+   timmar=timmar
 )
 
 # =========================
@@ -48,10 +48,10 @@ temps3, energy3 = run_simulation(
 temps4, energy4 = run_simulation(
     T_start=T_start,
     T_ute=T_ute,
-    T_desired=19,
+    T_onskad=19,
     k_forlust=0.05,
     P=1.4,
-    hours=hours
+   timmar=timmar
 )
 
 # =========================
@@ -60,10 +60,10 @@ temps4, energy4 = run_simulation(
 temps5, energy5 = run_simulation(
     T_start=T_start,
     T_ute=T_ute,
-    T_desired=21,
+    T_onskad=21,
     k_forlust=0.05,
     P=2.0,
-    hours=hours
+    timmar=timmar
 )
 
 # =========================
@@ -89,7 +89,7 @@ experiments = [
 
 for temps, title in experiments:
     plt.figure()
-    plt.plot(range(hours), temps)
+    plt.plot(range(timmar), temps)
     plt.xlabel("Tid (timmar)")
     plt.ylabel("Temperatur (°C)")
     plt.title(title)
