@@ -1,9 +1,9 @@
-def thermostat(T, T_desired):
+def thermostat(T, T_onskad):
     """
     Enkel termostat:
     Returnerar 1 om elementet ska vara på, annars 0
     """
-    if T < T_desired:
+    if T < T_onskad:
         return 1
     else:
         return 0
@@ -19,10 +19,10 @@ def next_temperature(T, T_ute, k_forlust, P, u):
 def run_simulation(
     T_start,
     T_ute,
-    T_desired,
+    T_onskad,
     k_forlust,
     P,
-    hours):
+    timmar):
 
     """
     Kör simuleringen och returnerar:
@@ -36,7 +36,7 @@ def run_simulation(
     for _ in range(hours):
         temperatures.append(T)
 
-        u = thermostat(T, T_desired)
+        u = thermostat(T, T_onskad)
         if u == 1:
             energy += 1
 
